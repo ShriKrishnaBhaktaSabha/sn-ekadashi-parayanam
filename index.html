@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shri Krishna Bhakta Sabha — Ekadashi Parayanam</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap');
+
+  :root{
+    --bg:#FBF7F0;
+    --panel:#FFFFFF;
+    --ink:#2B1B12;
+    --ink-soft:#6E5C4F;
+    --maroon:#7A1E2C;
+    --maroon-dark:#5C1620;
+    --gold:#B8860B;
+    --border:#E7DCC9;
+    --good:#3F6B3F;
+    --good-bg:#EAF2E8;
+    --bad:#A23E2E;
+    --bad-bg:#F7E9E5;
+    --radius:10px;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    font-size:15px;
+    line-height:1.5;
+    min-height:100vh;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces',Georgia,serif;
+    font-weight:600;
+    margin:0 0 4px 0;
+    letter-spacing:-0.01em;
+  }
+  h1{font-size:1.5rem;}
+  h2{font-size:1.2rem;}
+  h3{font-size:1.02rem;color:var(--ink);}
+  p{margin:0 0 10px 0;color:var(--ink-soft);}
+
+  a{color:var(--maroon);}
+
+  .topbar{
+    background:var(--maroon);
+    color:#F6E9DC;
+    padding:14px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    border-bottom:3px solid var(--gold);
+  }
+  .topbar .brand{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:1.15rem;
+    color:#FBF3E6;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .topbar .brand .brand-logo{
+    width:30px;height:30px;border-radius:50%;
+    object-fit:cover;
+    flex-shrink:0;
+    border:1px solid rgba(255,255,255,0.3);
+  }
+  .topbar .who{
+    display:flex;align-items:center;gap:12px;
+    font-size:0.88rem;
+  }
+  .role-badge{
+    background:rgba(255,255,255,0.15);
+    padding:3px 10px;
+    border-radius:20px;
+    font-size:0.78rem;
+  }
+  .logout-btn{
+    background:transparent;
+    border:1px solid rgba(255,255,255,0.4);
+    color:#F6E9DC;
+    padding:5px 12px;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:0.82rem;
+  }
+  .logout-btn:hover{background:rgba(255,255,255,0.12);}
+
+  .wrap{max-width:760px;margin:0 auto;padding:24px 18px 60px;}
+
+  .panel{
+    background:var(--panel);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:20px;
+    margin-bottom:18px;
+  }
+  .panel-tight{padding:16px 18px;}
+
+  .gate{
+    max-width:420px;
+    margin:8vh auto 0;
+    padding:0 18px;
+  }
+  .gate .brand-header{
+    text-align:center;
+    margin-bottom:28px;
+  }
+  .gate .brand-header .gate-logo{
+    width:76px;height:76px;border-radius:50%;
+    object-fit:cover;
+    margin:0 auto 14px;
+    display:block;
+    border:2px solid var(--gold);
+  }
+  .gate .brand-header h1{font-size:1.35rem;}
+  .gate .brand-header .gate-subtitle{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    font-size:1rem;
+    color:var(--maroon);
+    margin:2px 0 6px;
+  }
+  .gate .brand-header p{font-size:0.9rem;margin:0;}
+
+  .tabs{
+    display:flex;
+    border-bottom:1px solid var(--border);
+    margin-bottom:20px;
+  }
+  .tab-btn{
+    flex:1;
+    background:none;
+    border:none;
+    padding:10px 6px;
+    font-size:0.88rem;
+    font-family:'Inter',sans-serif;
+    color:var(--ink-soft);
+    cursor:pointer;
+    border-bottom:2px solid transparent;
+  }
+  .tab-btn.active{
+    color:var(--maroon);
+    border-bottom-color:var(--maroon);
+    font-weight:600;
+  }
+
+  label{
+    display:block;
+    font-size:0.82rem;
+    color:var(--ink-soft);
+    margin:12px 0 4px;
+  }
+  label:first-of-type{margin-top:0;}
+  input[type=text],input[type=password],input[type=search],select,textarea{
+    width:100%;
+    padding:10px 12px;
+    border:1px solid var(--border);
+    border-radius:7px;
+    font-size:0.95rem;
+    font-family:inherit;
+    background:#FDFBF7;
+    color:var(--ink);
+  }
+  input:focus,select:focus,textarea:focus{
+    outline:2px solid var(--gold);
+    outline-offset:1px;
+    border-color:var(--gold);
+  }
+  .btn{
+    display:inline-block;
+    background:var(--maroon);
+    color:#fff;
+    border:none;
+    padding:10px 18px;
+    border-radius:7px;
+    font-size:0.92rem;
+    font-weight:600;
+    cursor:pointer;
+    font-family:inherit;
+  }
+  .btn:hover{background:var(--maroon-dark);}
+  .btn:disabled{opacity:0.5;cursor:default;}
+  .btn.secondary{
+    background:transparent;
+    color:var(--maroon);
+    border:1px solid var(--maroon);
+  }
+  .btn.secondary:hover{background:#FBEFEC;}
+  .btn.block{width:100%;margin-top:16px;}
+  .btn.small{padding:5px 11px;font-size:0.8rem;}
+
+  .error-msg{
+    background:var(--bad-bg);
+    color:var(--bad);
+    padding:10px 13px;
+    border-radius:7px;
+    font-size:0.86rem;
+    margin:12px 0 0;
+  }
+  .success-msg{
+    background:var(--good-bg);
+    color:var(--good);
+    padding:10px 13px;
+    border-radius:7px;
+    font-size:0.86rem;
+    margin:12px 0 0;
+  }
+
+  .stat-row{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0;}
+  .stat{
+    flex:1;min-width:140px;
+    background:#FDFBF7;
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:12px 14px;
+  }
+  .stat .num{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:600;color:var(--maroon);}
+  .stat .label{font-size:0.78rem;color:var(--ink-soft);}
+
+  .roster-row{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:10px 4px;
+    border-bottom:1px solid var(--border);
+  }
+  .roster-row:last-child{border-bottom:none;}
+  .roster-row .name{flex:1;}
+  .roster-row .name .rn{color:var(--ink-soft);font-size:0.8rem;}
+  .group-dot{
+    width:10px;height:10px;border-radius:50%;
+    flex-shrink:0;
+  }
+
+  .toggle{
+    position:relative;
+    width:46px;height:26px;
+    border-radius:14px;
+    background:#D8CFC0;
+    cursor:pointer;
+    flex-shrink:0;
+    border:none;
+  }
+  .toggle.on{background:var(--good);}
+  .toggle .knob{
+    position:absolute;top:3px;left:3px;
+    width:20px;height:20px;border-radius:50%;
+    background:#fff;
+    transition:left 0.15s ease;
+  }
+  .toggle.on .knob{left:23px;}
+
+  .today-card{
+    border:1px solid var(--border);
+    border-radius:9px;
+    padding:14px;
+    margin-bottom:12px;
+    border-left:4px solid var(--gold);
+  }
+  .today-card .row1{display:flex;justify-content:space-between;align-items:baseline;gap:10px;}
+  .today-card .dashakam{font-family:'Fraunces',serif;font-weight:600;color:var(--maroon);}
+  .today-card .fields{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px;}
+  .today-card .fields .full{grid-column:1/-1;}
+
+  table{width:100%;border-collapse:collapse;font-size:0.86rem;}
+  th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--border);}
+  th{color:var(--ink-soft);font-weight:600;font-size:0.78rem;}
+
+  .empty-state{
+    text-align:center;
+    padding:30px 16px;
+    color:var(--ink-soft);
+  }
+  .divider{border:none;border-top:1px solid var(--border);margin:18px 0;}
+  .hint{font-size:0.78rem;color:var(--ink-soft);margin-top:6px;}
+  .flex-between{display:flex;justify-content:space-between;align-items:center;gap:10px;}
+  .pill{
+    display:inline-block;
+    font-size:0.72rem;
+    padding:2px 8px;
+    border-radius:20px;
+    background:#F0E6D2;
+    color:var(--maroon-dark);
+    font-weight:600;
+  }
+  .checkbox-list label{display:flex;align-items:center;gap:6px;font-size:0.86rem;color:var(--ink);margin:6px 0;}
+  .checkbox-list input{width:auto;}
+
+  .modal-overlay{
+    position:fixed;inset:0;
+    background:rgba(43,27,18,0.45);
+    display:flex;align-items:center;justify-content:center;
+    z-index:100;
+    padding:20px;
+  }
+  .modal-box{
+    background:var(--panel);
+    border-radius:var(--radius);
+    padding:22px;
+    max-width:360px;
+    width:100%;
+  }
+</style>
+</head>
+<body>
+
+<div id="app"></div>
+
+<script>
+/* ====================================================================
+   CONFIG — put your deployed Apps Script Web App URL here
+   ==================================================================== */
+const WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbwgaR9PXSBFvJdDKq-NX9msYKNSwF7Sq8V_i2Uq-lo9u6Q72Qoqa1Y8PJHvaY-6L3qS/exec';
+const LOGO_DATA_URI = 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCACfAKADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD7HciNOB7AVEbnAyEz+NPuhmI8471Vb3OagCwJyR/q+vT5utKZwADtyCM8GofvKOSfrUT4XgsPwNAFkXGWwEz+NO8/kjaPbnrUMKkj5wDnsfapNiqflUDPfFOwh4kbGSmPxoEp/uj86aGAzQy9+DzRYY/ecZ2j86TzeBhR+dNP3cd6AoyCaLAOEpJ4UfnS+Zx0H50wqMbuaByeh4osA7zG7Jn8aPMP90fnTWyDwKBj15osArTFTgoB/wACpv2kYB2YB96UgEdPwNRyIqghQATg0WAlExJA2dffpSGfHRckjIGeoquCN5Y5DZ+6TinkEJgnI7GkBILle64x70+GUSZ4wRVVxk7gAQeSD2qe1HLEj0oAfc48sE9AQarEccqT7njOatXGPLwfWqjqRjPDdOvWgBcqYzjk55BHSiEZkTHGQfwoSIGQkMRgAZBqZVVTuyScYyadgHBSDStjHFHGOtJ17HFAhoJ3cLmlbGDzj2oG4Z4pCD1IOaBgBzjdkUo4XpVbU7+z0zTp9R1C6it7S3QvLI5wFAGa+c2/aYu4vELTz6Hbx+HJLhorcEs13KApChQONzuO4IAOPetadKVRNxWxE6kYNJ9T6V578e1KAAO+a838MfFWDXkuTa+HroS2j+XeWrXCLc2zejxtggeh6HsTXXaH4m0jWJfs0E7wXYGTbXCeXKPoD1HuM1yLEU+fkbs+zTX5mzpytzdPLU2iRjvTRk8CnAA/dIpG4OOc1uQBxnLGkYb8ZOP60hzyMc0AENg0gGzqQEA6k455xUYON2OMdCalI3kAkjHTFMmQAbtzMQc8mgAx6dP7veprUdec8Cq69QSee1WLbqwz26elIB1znyxg4OfSo41yOOAD61LMMqBjPPrTMBcgDvkc00ABcYGDSnGD/L0peSvSk68n8qAEyfTml+bGQetN3YNKCG5YnPpQAZNR3tzBY2Ut3dSCOCFC8jnsoFPPp0z+tcn8SnMtppmkA5W+uv3q/wB6OMFyp+pCiscRV9lTc1v+vQunHmkkzKXRrvx5bXN/quYLV4pEsbVxlY9ykB2HQvyCSQcdBz0+S9D8I67oHxFttK1m50+HVtEuSscUTeYjyMikSDODhQ6twpA28leBX2b8R9cHgf4Xa1r1ukbS6Xp7yQh+FaXGFz9WI+tfAXgptf8AE3jO2udMhuvEHjPVbiWRTJc7FQAHczkkZJG7gkKFHQ549PKMPKnSm777vu/8jkxtRSnFW22PoF9QX4b+JdL8ZIvnWqacjTRJcFjJZShjtY5GZFEUjbWyAwOOGwvuaReFPHvh+PV/D1/aXsDndBd2cmNrj3HKMPwPqDXgX/Cm/iFr9tZ6TqnjTStK19xLc3lmtsJEWMsuwhkUBn6ZyTkHrwc4X7P3iLWvht8b5fBWv27mbVrgadd28aGJfOVz5V4o2hSrJxkYJBz2qsRhaWKpvVSaCFSpQkrqyZ9S+Ddau5bmbQdYbOpWq70lIx9pizjdj+8Dww/HvXTEjODnNcd48Qadrej67CdrQ3SJJjujERuPyZf++a7JwQ2OK8bDSacqcndx/J7HbUSdpLqHK4zignIzx7UnJG3HFIAemRXUZDuD3IpgHBDZp20pzjrSjJ5yBQBGE+U4JwO1PtBgsMcUoAOecds06FQrkDpgd6AHyHAB96jJBPXP9KdMcJ+NRdPvcUIB2R2P1p2NvJ5qNgMcCkBY9DkDtQBJuycbcVFO+2GRvMCbVJ3t0XA61V1XVrbTfL+1LMFcOxZE3bFUZZmx2Arl77xZb31rmO3mSyBaK9jmj27MkbNxyCAy+nTcpNZTr04vlckmUoStdLQbqOpXK3cQmLSvCiuJJAFZGPJKgYH59s1V8TXO+90a6aeSRo7uRCkv3kEsXyfgSpx9at6KkOpeTNJMJ/P4WaYs4V1P3F7dOME5475rR1TQ5NR0290rMaO58+KaNCPLlBBTk9cEfqa46uGqyhKzv1XnbU2hWhdHDfthSwH9n3XWluIY1ke2MfmBjvbzVIC47nHGeK8S/ZU0Cc67q+r39rd6PrOjWUTWcS2LyzrbTBg80cbA72O0KOCAGbgk1658ctQ0vVf2evFFj4jtroT2ESBoIWCyJOsi+X1/hDYPuue9eO/CP4z654P8N6dqniDR4NRnaWOzSR0Zb64seOIVI+fk7twO0+XhvmINfQYKr7bBtw6v+v8AgnnV4cldcx9D/wBjHVNFg1m5j1We7u5RamfVQLG5a2OSscgiA2qz4BO0PtbB4r59/aS8JS2HiLw/I+m2dtr862kGn2mmTP8AZkka6kwm5gCflGc4XBzgV7P8SfiNZXemaZeaVeNp8DyRvcDV4WswYicsAJGUsw7Dy3Ga+dv2hfHmh+K9b1aS51SSe+FtFBZQ21o6paGOTcFaSTaWJyzFwinnA4zmMHWUato/O2v32/UrERlKN5P7+3zPr74lEz2Wn6edqz3FzEmM8Al1J/DCt+VR6xqUm8RszXK5eaNpTgY3HY6YHYdM155+y7qWreMPh3pWv6sbq4k0aOSyhkuW3tcyr/y0yeoVCFHfOec16bqFrD5CSSC2mlw7rGEdcKTkscfdA+mK8Wrhqvtaj21t8l/TO2NWHLFfP7zX0C5mulllluGkDKjKjqAVyDkjAGQT0+hrSBXqK8/0rXre0na4jmeS1tx/pN07eYVhwdsZ54JboQO2T1rqdD1+z1R4o4ILuKR1YuJItqxuuNyEn+IZHSt4VoRfI5Jsjlk1zJaGxzjJ6Ud/X0FBwDznPp0pV9TnNbkAQfSnxA7jn0pnmZ4xinx53HnPFDAJvufjUWcdhUs+dnHXNQljjpn+lCAVsN0xQ20E/LzTQdwzinAHPPegDzbWvtN9ql6dQt7e3ug8Xm2ZTc5gDf6xJM/NlcggAdMdesut6pp0N/Z3QeG/u8up8lDIHUKPLYgZywJ4B56+lP8Aixd3mlarompPpdnquiqJY7+Jwvnx8ZR4ySD1BBAyORkd6Z4H1W2W+e+0y1mjtdSljKwOBmIFN2wYOAAfM6Z6V50srrt80WrPr1Vtdu//AA5ssZST5Xuugy81ey8H+BxqWsS2z60kby2eny3O2WZ85VNgyzEZBOASOa8j8d/EPUizSeItV1AZlDx2qSSadaGNZAQOQspDRvwWDOkkI4KtXdaB8EI11ma71PxZcy2qzyGIafGLe4mRmZsTzjLsw3EZUrkfXip4R8L+DtG8KXWoajpMVxeeE3uTr9u0Pmy3ckKFo3LNksGUpIATjLD0r06EZqCjFrTS+7/RL8fQ5qlnK7W/yOPvIdc1zW5fEfibRb7VLGwSNNR1Ce1VLewKIgJWF5G87B+aQqqOpLEMpG2vQfi54INj8L77UNO1W403U7Z4Z47q1f5odzqkm1j1LRttLcbtiE/MMmOPSH8Vjw78O767EulyadLr3iQ2c/y3H2iVmhg3r1QyPIxx94RDsavalq9pc/DO/wDA3i2dk1JLBYYJkQSLqcWcRXEQzhgdq71JG05zwQTvGFkot377bemxDld32MLwRbfDnSPCWnnUtBm1PxFbW4+06g9tvmnlx80nnudoBPPLDHoOlee6l4a0nxb4v1bUb7RbBrVUJugcDMrqpSNZmHyBYoi8kxGVXJABYAbujWdrfHVtRvMaZDounNfXMBlMksqA7wtvJwZEJQr5h+dM7STkEbVhp9toHgzwxpN3JbLe61dkOs5AjZ9+6UuT1QFS5B+8Igv8VdMP3StHQwkud3Zm+HtI+Ivg3w02tfDXTLubRYAbj+zLy5EVtdx/ec29s6tMgIyQzSqzddvOK9v8O6hpvjjwbpvijTg0a6lZLNAzMcxEj7rY4JVsj8DUt74z8N21pqTJqsNz/ZtjLd3DIdyBIx83zD5SeRkA8ZFcD+zQ99c/s76AYCYZy9xlc7Sq/aZMqM9DjIrCo3OPM1Z339TaKUXy7lvTrqKG5s7LWbbyL2whkB8+MqskikGMM3Rl6lT0zin6m6/bru/jmtp0e4hNviHzHup1x8seCMAkKCwPOD25rT8ZQSJp32AXM5jnQOQshcKRIApDE5ByQCORzWL4P1Ya58QtP/4RzQrTTdFtIZzfXMyoZ5XBZI0j5OAcByQPYn18NZTW+zJOO9/lb5/qdv16nfVa9j0/T5bqazhkvbdba6ZAZYVkDhG7gN3qfduOCKCuelAU+teglZWMWLtI9D7U+E5Y8Y4FNAYGnRH5z9KYCzfd/GoSx6frU0/3OPWoVB70kAg+8DT3znPUUEADoCPWkHHQkegxTA5PVV/srXXv7q1t9QbUJPJtYiB5pbAIXc3CIoViT3z0zWXq0lppWovIlitpeyREPaW7+YjHBww2j5D8xzwOGz2rtr/T7HUo0iv7OO5VHDqJFyAw7ivLrnVZbnWb/XNPaBxaXLqFupCtxLHtK/6nGFUH7rNjcFHTOalQxFWpZP3Xp+H+ZMnSpxu1qa0vjO9s5YZ4rXTYtHj1OG2vLnzHkfbIAPlBxjaWTcx7HgcGuct/BWr33j/xnpOn6vHb2D38d1dB2fMnnpv5QDDheVGSOFA7VkaFLN418SLe34FvoqSmW4iV8LKsTdM85G4dBnjPIHTr7fxLa6R8Y9Om1Fks4PGmkhIBI2NtzayNsBPQb45hj3UDuK2pVaSk6VJ3lG99OzV/62M+SbSnU2drfM8n+G+ra38LfEmpWuoSfbIhfmwu/NIUNHF8kJHHyLsZCAM4Mq/e3/Kpv7vxt8I9A1jTJktJtK1O70ixuJW3ie2wWCyAcodsUQyp7Z7103xqstO1LUvG3kYlMFpvuRG+CJY7MzMMjo2IIffgVjfAnTLzxb8FfEWoadpzwWs/ie5vdOs4wAfJaMRuiZ4yFdsdiy4r0W04+0a10MEnfl6ansEen+F/iZ4WbSdc0cWl9pjfZrq0Rtk+mzADiNxzsIAKkfK644PIrBHww1K58Xaf/wAJBrFzf6Xp2nNaaTc2saRSwsW3O1wCCGYgKAygA4OQM847XHjHxR4v03WfC9zotrrNnaiO4uLcySQzxE58u9UgGPG1wsYy6sxIIAOdy6+OGj6Hot/L4v0LV9H1OwkaB7Zbdp4LmdcDZDcKNhySPvbSM8iuflqLSH3dv6/4c15oP4jyH4y2t7Y6ta+AprmGLVdYX999kYE/YVLtIXAHy7tnAyTjjgcV6F8IPEF9Y+CdG0LRlspLm51rWFaK5BCCGK5l5DA/LlmjUHB+904rzHwToXinUfjtqfij4hW32O/urpFijY5RbZSkkjRnvGsYSEMOC0w6nNavwnP9ufBz+1LN5LbVbHVr+eGXdjzbeecsygfxfMF44ORx6Vri6tKhRvVei3662ZnShOpL3N/+Cj1uLWrTVmtk1C0P2dn3+XFIxUyFgBHLJjCAHBOCckY6ddW7hXVp00S103TtLvY4xcxOhV1MXQPE6AEMrYOMDP0NcP4W1u+1vSBpQtrC0NlLm58+Yw79gJALAEqPukZAAA75r0n4cyaXf6JHq9tast8Qbe6mkjAdmQ4wGHDJ02sCQRg5rzJU6tNwdKXufo/l1OiE4T5lNe8dUckYJPHf1pRt6HrUYPPfNPGScEc0zQOOTgn60+IYY89qYeuAcVIn3se1ACTjKAe9Rly31qWX7v41CTxx0pAAPHXjtmlBA6fjmk+9yQPrS7RimAM2TgYrk/F3gHw14p1L+0Nbt7macRrEpS4ZQqKScADjkk5rqmH6+tcp8W7rxXY/DvVrzwVaG81uJFaCIKGcrvHmbAeC+zdgHPOOD0rSm5KS5XZkTjFx95XM5NMSHSv7OuZItI0i1QoY5Bsjj5IAQ5GTjksSSSa8g/aC0/UvHem6bpnhfSNW166s7OezNzaWLpBnfBJE/mSBV/5ZFTtJxnIp/i34lQav8N9W17wl4p1y21K1vtOhn0q/VVvNOdp9koDEZKuGA64BXtnFeh3nxt0yz+2RXvhjWUvbTxDHoMlqjxSN50i7o2BDYIYA8Dv+dXh8JPDT9qruXmTVqqrHk2R5Z4Y8DfFqz8Hy6DY+AbCzN1bSRXFxfavGGZ5LMW7yFUySc735PO7BrtPAGhfHnwh4M0zwxo2lfDyC00+Hy1aa5uHd2JJZ22gDJJJP1ra0fxh4o1TxB47stLsNVGuafZWE0Oi372witXlQlljkUkMxGSd5xuAHSuO0L4jeIY/ip4p8E6n4ivLSa81G107S5btUePTy8JklAZVCtMT8qA8FuegwetyqTvou/X+upioxjazZ11nF+0FYifydF+GI+0SmaYRPcxGVzjLEgck4HJrlPHvh74zeIfBN34cu/A+gSCe6mvTPZa2B++cuykrIoyFZgcZ/hFa1140sPDGl+OfDPhzR/GEf9grK+qa213HdPbyNBvEy+fIdxbHCgAZycCt/Rvinp2qEeGbM3L6umlQSzSzzRw3GJbXzROicCQDI3FOhPAIFSpVIvmUV/XzG4wejbPGde0bxt4f0PVn0/wCGniezvJbMRRbZft5aVlKlmlV2KQxBnMcSjG4qxOVFeofBPwxFpPw90mz0zV7R9VsLLa1spIkRyWd8qcMGLMwyR0ArO+Enxmms/AWg2/iqw1e/1Cbw5da1/aHmRsbtYHfzFxuBDADjOM4rqtK+LWk63fTW0/hPVBPHodvrtqu2KZ57eZgo27T8hBPOSMAE8YrPGU5YiHJNbO90/kVQapS5kzQl+H/hzxRcy6tr2l3JuZDsLl2hadNo/wBYq4+YHIzxnArvLWBLazgtYzIY4Y1jQu25iFGBknqeOtcx8O/HOn+M7zX7O2tXt7jQ777Hc/vVljkJXcro6/eUj6dK68AA9TiuW1SMVCbbsbJQu5RVrjADnjge9OC9utOGM4zimlxu6HFSUKVP0+tPThj9KacAZBJpY+v4UMAuDiPPvUJLAZU96luv9Vwe9QIyquC2M84PWkgJFYE88fSlJB5AwBTcDtzSDpjr7U7gD4ClicAckk9K87+Ivi/w/Lot3Bo3jHTrfW9NkiuoY0v4owZc/JHKz5UI+cfNjOeCOtdt4g0231rQNQ0W5lmigvrd7eSSF9rqHUglT2PNfK3jfTQPF3xk0h/EcRhtfDunpczX21pbwRRqxj3DAV327chTgkYFdOGpxm229v8ANGVWTSPRZPBuhfEDxT4hsvEV+dP8UTwWMs8NosYlS1hdZELKC6AtKcZ3sSqr90cV0mo/BvSb7WbzUn13UllvPEVv4gdBHHhZ4VKog4+5g89+OteGa14h1OG88UeK9Env/C1/ZeAdKuIbdHUyRESqojcupJGCPQnIz6V13in4saoNesZdL8Usj2viDSLO9gfZDEsU8IMyiPkyoScmU7dpIC+tdEqVXTlf9aGSlHqj1n4f2Hhq88b+LfGvh/XpdSl1GeKw1CLy9sdvLbLt2LlQcgNz15NYXib4I6TrNr40f+27s6j4kuIrxJpFQCxuocmF49oBGM4POSK85+Efis6f44u/DlzcX2m6Vq3jnVtuo20q7J7gbPLtXyCVDA7s8EkADvR8M/F66R4SW3vvFl/HqOq+NbyylSa5BZlBbAeVzmAHCkvgk7QAOeJdKpCTcX2/r8BqcWtUdn4D8Ba5feH/ABtYeOYdR07VPFESxarexSW72rhI/LEkBB3DcnJDrwc1ZtvBfgbXdS0C1/4S5tSutNhWXSG8qMTbIofJPlyhR5kPRyoJG7vg4pfhF4oHir9nG61Pxzq7TJ5d9Z6jeIQJFhDvHubaOGCEc4965G31Xxb8ILiw8Na/qln4h8Mf2TeSaDrtvaiS802KGHd80YOJEC7B1wePmxxS99ykk7Nf1oHupI6PxF8LPBfhHwnYXus+L9R07S9F0O50MXEkaNmG6ZgzNhT8+XAGBjgcVD46+FngnTNDS81zxpqul2txo9l4chmCp8yxyK8XAU5ZmUAg/KQSMV5f4+8b6r4h8C/ELSLnXW1LTf7E0bULNJJkldXklj8w5UcZ6sgJCHgGtD4q6n4gY+KNCutcu9W0Gy13QWsrm52EwXEhDSQoygAgDB29uPXnWNOppeWv/Df5kuUeiPoTwH4GtvCGteIdVj1a+1CbXbiO4ulnSNQsiJtLLsUdfToK7HgjKHNfN+n/ABC1Ww13X/DOq+Mb2TZ41OmWUsxiR2hMJYxPPgCFQ3O4KTxtA549F/Zo8T6r4r+EWn6nreoC/wBSWe4gmmJG87JWVd2Mc7QOwz1rlq0ppc8n2NoTV+VHpRBJ+ajHvg0mW7075f4sg/WuY1EyqjnrToiCTj0pjFF+UMAfSltsBmA4GBxQwHXWfK4ODmqTABS2SMduuau3OfK49aqbht3AZ46+lIAjYqcg4GOMn9KkSQMeCCfSojyA2e340kJxKu48gHPPNNAWD0z3qg2kaU1y1y2lWDTFtxlNshcn1zjOfetAFcnII9j2pDjPHSncCpPp2mzSSyzafayPKAJWeBWLgYwGyOeg6+lMfR9Hcsz6TYMW2bibVCTs+5nj+Ht6dqvDgkjNOADcCi7FYwfEHhLw3r+jy6Tqui2k1nJKs+xE8siVeVkVkwyuOzA5qxZaFo9vbrbrplvIvmCVnmiEjvIOkjs2Sz/7RyfetYL9TTgB2H4mnzO1rhZFOGxsoLeW2gs7eOCUsZI0iVUYt94kAYJPfPWuY8D+AtN8LvK0d5PqBaA23+kQwr+6LltrbEXeecZPYYrs2GPlFM2jJzQpNJoGluUodK0uD/UaXYRZjEP7u3RfkHITgfd5PHSgaVpq2iWo02yFujb0iFumxW9QuMA+9XlwOeKGDN1pXYWRRfS9KckyaXYuxkExLWyHLjkOePvDJ5681PZ2lraRNHa28FujOXKRRhAWPJOB3Pc1OFx25pCcLub8qLsdgY7fmYgD1pkhJGUcEk44PSllfcF3L8oOeTUe1uSTtKnI4pXAaCpOCTgdqs2gALbScYGAe1Q8DGRyDnHpU1ocljkHjNIB11/quDg54qoV+b2GTV4hZYwexwQajNsmMbj9cCgCsUOTg8dB9KaEHl/dH1xVxYAFxuJ5zyBSC2UDG9uuaAKsfynnoOoqaNkZuGB9s097VWbJdvoO1L9mXOSxP1xTuAhH4CkyBj5qkEIH8TUGIHqTRcCMH3/Gnbs87uBTvJH940vlD1NFwGEgjk0mOfUGpPKGMZNAjx/EaLgM7dQKATjgcU/yh/eNHl8feNFwI3YLgsQPrTJjkbo2GR19vepWt1Yckk+uBSLbKOjt+lFwKoTDYyN2ep5z71Ipz2IB6YqfyF9Tn1xSG2UjG5umM0gK0n4fnU1j1b6CnC1QDG4/kKkhiWLOCTmgD//Z';
+
+/* ====================================================================
+   STATE
+   ==================================================================== */
+let session = JSON.parse(sessionStorage.getItem('ekadashi_session') || 'null');
+let view = session ? (session.role === 'Admin' ? 'admin' : 'leader') : 'gate';
+
+/* ====================================================================
+   API HELPER — POSTs as text/plain to avoid CORS preflight, which
+   Apps Script web apps do not support.
+   ==================================================================== */
+async function api(action, payload) {
+  if (WEBAPP_URL.indexOf('PASTE_YOUR') === 0) {
+    throw new Error('Set WEBAPP_URL at the top of this file to your deployed Apps Script Web App URL first (see SETUP.md).');
+  }
+  const body = Object.assign({ action, token: session ? session.token : null }, payload || {});
+  const res = await fetch(WEBAPP_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+    body: JSON.stringify(body)
+  });
+  const text = await res.text();
+  let json;
+  try {
+    json = JSON.parse(text);
+  } catch (e) {
+    throw new Error('The server sent back an unexpected response instead of data — this usually means several requests hit it at the same moment. Wait a few seconds and try again.');
+  }
+  if (!json.ok) throw new Error(json.error || 'Something went wrong.');
+  return json.data;
+}
+
+function saveSession(s) {
+  session = s;
+  sessionStorage.setItem('ekadashi_session', JSON.stringify(s));
+}
+function clearSession() {
+  session = null;
+  sessionStorage.removeItem('ekadashi_session');
+  view = 'gate';
+  render();
+}
+
+function colorForGroup(groupNum) {
+  const HUE_STEPS = 12;
+  const idx = Math.max(0, Math.floor(Number(groupNum)) - 1);
+  const hue = (idx % HUE_STEPS) * (360 / HUE_STEPS);
+  const ring = Math.floor(idx / HUE_STEPS) % 2;
+  const s = ring === 0 ? 62 : 78, l = ring === 0 ? 55 : 45;
+  return `hsl(${hue},${s}%,${l}%)`;
+}
+
+function el(html) {
+  const t = document.createElement('template');
+  t.innerHTML = html.trim();
+  return t.content.firstElementChild;
+}
+
+/* ====================================================================
+   ROOT RENDER
+   ==================================================================== */
+function render() {
+  const app = document.getElementById('app');
+  app.innerHTML = '';
+
+  if (view === 'gate') { app.appendChild(renderGate()); return; }
+
+  app.appendChild(renderTopbar());
+  const wrap = el('<div class="wrap"></div>');
+  app.appendChild(wrap);
+
+  if (view === 'admin') renderAdmin(wrap);
+  else if (view === 'leader') renderLeader(wrap);
+}
+
+function renderTopbar() {
+  const bar = el(`
+    <div class="topbar">
+      <div class="brand"><img src="${LOGO_DATA_URI}" alt="Shri Krishna Bhakta Sabha" class="brand-logo"> Shri Krishna Bhakta Sabha</div>
+      <div class="who">
+        <span class="role-badge">${session.role === 'Admin' ? 'Admin' : (session.role === 'ZoomLeader' ? 'Zoom Leader' : 'Group Leader')} — ${escapeHtml(session.name)}</span>
+        <button class="logout-btn" id="change-pw-btn">Change password</button>
+        <button class="logout-btn">Sign out</button>
+      </div>
+    </div>
+  `);
+  bar.querySelectorAll('.logout-btn')[1].onclick = clearSession;
+  bar.querySelector('#change-pw-btn').onclick = openChangePasswordModal;
+  return bar;
+}
+
+function openChangePasswordModal() {
+  const overlay = el(`
+    <div class="modal-overlay">
+      <div class="modal-box">
+        <h3>Change password</h3>
+        <label>Current password</label>
+        <input type="password" id="cp-old">
+        <label>New password (min 6 characters)</label>
+        <input type="password" id="cp-new">
+        <label>Confirm new password</label>
+        <input type="password" id="cp-confirm">
+        <div id="cp-msg"></div>
+        <div style="display:flex;gap:10px;margin-top:16px;">
+          <button class="btn secondary" id="cp-cancel" style="flex:1;">Cancel</button>
+          <button class="btn" id="cp-save" style="flex:1;">Save</button>
+        </div>
+      </div>
+    </div>
+  `);
+  document.body.appendChild(overlay);
+  overlay.querySelector('#cp-cancel').onclick = () => overlay.remove();
+  overlay.addEventListener('click', (ev) => { if (ev.target === overlay) overlay.remove(); });
+
+  overlay.querySelector('#cp-save').onclick = async (ev) => {
+    const oldPassword = overlay.querySelector('#cp-old').value;
+    const newPassword = overlay.querySelector('#cp-new').value;
+    const confirm = overlay.querySelector('#cp-confirm').value;
+    const msg = overlay.querySelector('#cp-msg');
+    msg.innerHTML = '';
+    if (newPassword !== confirm) { msg.appendChild(el(`<div class="error-msg">New password and confirmation don't match.</div>`)); return; }
+    ev.target.disabled = true;
+    try {
+      await api('changePassword', { oldPassword, newPassword });
+      msg.appendChild(el(`<div class="success-msg">Password changed. Use it next time you sign in.</div>`));
+      setTimeout(() => overlay.remove(), 1400);
+    } catch (e) {
+      msg.appendChild(el(`<div class="error-msg">${escapeHtml(e.message)}</div>`));
+      ev.target.disabled = false;
+    }
+  };
+}
+
+function escapeHtml(s) {
+  return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+
+/* ====================================================================
+   GATE — login (Admin / Leader) or public Devotee lookup
+   ==================================================================== */
+function renderGate() {
+  const wrap = el(`
+    <div class="gate">
+      <div class="brand-header">
+        <img src="${LOGO_DATA_URI}" alt="Shri Krishna Bhakta Sabha" class="gate-logo">
+        <h1>Shri Krishna Bhakta Sabha</h1>
+        <h2 class="gate-subtitle">Ekadashi Parayanam — Sriman Narayaneeyam</h2>
+        <p>Scheduling &amp; recitation tracker</p>
+      </div>
+      <div class="panel">
+        <div class="tabs">
+          <button class="tab-btn active" data-tab="devotee">My schedule</button>
+          <button class="tab-btn" data-tab="login">Leader / Admin sign in</button>
+        </div>
+        <div id="gate-body"></div>
+      </div>
+    </div>
+  `);
+
+  const body = wrap.querySelector('#gate-body');
+  function showDevotee() { body.innerHTML = ''; body.appendChild(renderDevoteeLookup()); }
+  function showLogin() { body.innerHTML = ''; body.appendChild(renderLoginForm()); }
+
+  wrap.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.onclick = () => {
+      wrap.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      btn.dataset.tab === 'devotee' ? showDevotee() : showLogin();
+    };
+  });
+  showDevotee();
+  return wrap;
+}
+
+function renderLoginForm() {
+  const form = el(`
+    <div>
+      <label>Username</label>
+      <input type="text" id="login-user" autocomplete="username" list="login-user-suggestions" placeholder="Start typing your name…">
+      <datalist id="login-user-suggestions"></datalist>
+      <label>Password</label>
+      <input type="password" id="login-pass" autocomplete="current-password">
+      <button class="btn block" id="login-btn">Sign in</button>
+      <div id="login-err"></div>
+    </div>
+  `);
+
+  // Populate the name suggestions once, quietly — this is a convenience
+  // dropdown, so a failure here should never block the sign-in form itself.
+  api('listLoginNames').then(data => {
+    const datalist = form.querySelector('#login-user-suggestions');
+    (data.entries || []).forEach(entry => {
+      datalist.appendChild(el(`<option value="${escapeHtml(entry.username)}">${escapeHtml(entry.name)}</option>`));
+    });
+  }).catch(() => { /* suggestions are optional; sign-in still works by typing the full username */ });
+
+  const doLogin = async () => {
+    const username = form.querySelector('#login-user').value.trim();
+    const password = form.querySelector('#login-pass').value;
+    const errBox = form.querySelector('#login-err');
+    errBox.innerHTML = '';
+    if (!username || !password) { errBox.appendChild(el(`<div class="error-msg">Enter your username and password.</div>`)); return; }
+    try {
+      const data = await api('login', { username, password });
+      saveSession(data);
+      view = data.role === 'Admin' ? 'admin' : 'leader';
+      render();
+    } catch (e) {
+      errBox.innerHTML = '';
+      errBox.appendChild(el(`<div class="error-msg">${escapeHtml(e.message)}</div>`));
+    }
+  };
+  form.querySelector('#login-btn').onclick = doLogin;
+  form.querySelector('#login-pass').addEventListener('keydown', ev => { if (ev.key === 'Enter') doLogin(); });
+  return form;
+}
+
+function renderDevoteeLookup() {
+  const wrap = el(`
+    <div>
+      <p>No login needed. Search your roll number or name to see your upcoming portion and recitation history.</p>
+      <input type="search" id="dv-query" placeholder="Roll number or name">
+      <button class="btn block" id="dv-search">Search</button>
+      <div id="dv-results"></div>
+    </div>
+  `);
+  const results = wrap.querySelector('#dv-results');
+
+  async function search(exact) {
+    const q = wrap.querySelector('#dv-query').value.trim();
+    results.innerHTML = '';
+    if (!q) return;
+    try {
+      const data = await api('devoteeLookup', { query: q, exact: exact || undefined });
+      if (data.matches && data.matches.length > 1) {
+        const list = el(`<div class="hint" style="margin-top:14px;">Multiple matches — pick one:</div>`);
+        results.appendChild(list);
+        data.matches.forEach(m => {
+          const row = el(`<div class="roster-row" style="cursor:pointer;"><div class="name">${escapeHtml(m.name)} <span class="rn">#${escapeHtml(m.rollNumber)}</span></div></div>`);
+          row.onclick = () => search(m.rollNumber);
+          results.appendChild(row);
+        });
+      } else if (data.matches && data.matches.length === 0) {
+        results.appendChild(el(`<div class="empty-state">No devotee found matching "${escapeHtml(q)}".</div>`));
+      } else if (data.person) {
+        results.appendChild(renderDevoteeCard(data));
+      }
+    } catch (e) {
+      results.appendChild(el(`<div class="error-msg">${escapeHtml(e.message)}</div>`));
+    }
+  }
+  wrap.querySelector('#dv-search').onclick = () => search();
+  wrap.querySelector('#dv-query').addEventListener('keydown', ev => { if (ev.key === 'Enter') search(); });
+  return wrap;
+}
+
+function renderDevoteeCard(data) {
+  const p = data.person;
+  const card = el(`
+    <div class="panel panel-tight" style="margin-top:16px;">
+      <div class="flex-between">
+        <h3>${escapeHtml(p.name)}</h3>
+        <span class="pill">Group ${escapeHtml(p.group)}</span>
+      </div>
+      <p style="margin-top:4px;">Roll number ${escapeHtml(p.rollNumber)}${p.portion ? ' · Portion: ' + escapeHtml(p.portion) : ''}</p>
+      <hr class="divider">
+      <h3>Upcoming</h3>
+      ${data.upcoming ? `<p style="color:var(--ink);">${escapeHtml(data.upcoming.date)} — <strong>${escapeHtml(data.upcoming.dashakam)}</strong></p>` : `<p>No upcoming portion allotted yet.</p>`}
+      <hr class="divider">
+      <h3>Recitation history</h3>
+      ${data.recited && data.recited.length ? `<table><thead><tr><th>Date</th><th>Recited</th></tr></thead><tbody>${
+        data.recited.map(r => `<tr><td>${escapeHtml(r.date)}</td><td>${escapeHtml(r.dashakam)}</td></tr>`).join('')
+      }</tbody></table>` : `<p>Nothing recorded yet.</p>`}
+    </div>
+  `);
+  return card;
+}
+
+/* ====================================================================
+   ADMIN VIEW
+   ==================================================================== */
+async function renderAdmin(wrap) {
+  wrap.innerHTML = '';
+  const dashPanel = el(`<div class="panel"><h2>Dashboard</h2><div id="dash-body">Loading…</div></div>`);
+  wrap.appendChild(dashPanel);
+  await loadDashboard(dashPanel.querySelector('#dash-body'));
+
+  const loginsPanel = el(`<div class="panel"><h2>Group Leader &amp; Zoom Leader accounts</h2><div id="logins-body">Loading…</div></div>`);
+  wrap.appendChild(loginsPanel);
+  await loadLogins(loginsPanel.querySelector('#logins-body'));
+
+  const activityPanel = el(`<div class="panel"><h2>Recent activity</h2><p>Every attendance and day-of change, tagged by who made it.</p><div id="activity-body">Loading…</div></div>`);
+  wrap.appendChild(activityPanel);
+  await loadActivityLog(activityPanel.querySelector('#activity-body'));
+}
+
+async function loadActivityLog(box) {
+  try {
+    const data = await api('adminGetActivityLog', { limit: 50 });
+    box.innerHTML = '';
+    if (!data.entries || data.entries.length === 0) { box.appendChild(el(`<div class="empty-state">No activity recorded yet.</div>`)); return; }
+    const table = el(`<table><thead><tr><th>When</th><th>Who</th><th>Action</th><th>Details</th></tr></thead><tbody></tbody></table>`);
+    data.entries.forEach(e => {
+      table.querySelector('tbody').appendChild(el(`
+        <tr>
+          <td>${escapeHtml(e.timestamp)}</td>
+          <td>${escapeHtml(e.name || e.username)}</td>
+          <td>${escapeHtml(e.action)}</td>
+          <td>${escapeHtml(e.details)}</td>
+        </tr>
+      `));
+    });
+    box.appendChild(table);
+  } catch (e) {
+    box.innerHTML = '';
+    box.appendChild(el(`<div class="error-msg">${escapeHtml(e.message)}</div>`));
+  }
+}
+
+async function loadDashboard(box) {
+  try {
+    const d = await api('adminDashboard');
+    box.innerHTML = '';
+    box.appendChild(el(`
+      <div class="stat-row">
+        <div class="stat"><div class="num">${d.totalDevotees}</div><div class="label">Active devotees</div></div>
+        <div class="stat"><div class="num">${d.groups.length}</div><div class="label">Groups</div></div>
+      </div>
+    `));
+
+    if (d.needConfirmDate) {
+      const b = el(`
+        <div class="panel panel-tight" style="margin-bottom:12px;">
+          <div class="flex-between">
+            <div><strong>Next Ekadashi: ${d.needConfirmDate}</strong><div class="hint">No confirmation tab yet — create it so Leaders can mark attendance.</div></div>
+            <button class="btn small" id="gen-confirm">Generate confirmation</button>
+          </div>
+          <div id="gen-confirm-msg"></div>
+        </div>
+      `);
+      b.querySelector('#gen-confirm').onclick = async (ev) => {
+        ev.target.disabled = true;
+        const msg = b.querySelector('#gen-confirm-msg');
+        try {
+          const r = await api('adminGenerateConfirmation', { date: d.needConfirmDate });
+          msg.innerHTML = '';
+          msg.appendChild(el(`<div class="success-msg">Created "${escapeHtml(r.sheetName)}". Leaders can now mark attendance.</div>`));
+          loadDashboard(box);
+        } catch (e) {
+          ev.target.disabled = false;
+          msg.innerHTML = '';
+          msg.appendChild(el(`<div class="error-msg">${escapeHtml(e.message)}</div>`));
+        }
+      };
+      box.appendChild(b);
+    }
+
+    if (d.readyToGenerateDate) {
+      const b = el(`
+        <div class="panel panel-tight" style="margin-bottom:12px;">
+          <div class="flex-between">
+            <div><strong>Ready to allot: ${d.readyToGenerateDate}</strong><div class="hint">Attendance is in — generate the Ekadashi tab (allotment engine).</div></div>
+          </div>
+          <label>Starting group ${d.suggestedStartGroup ? `(automatic next would be Group ${d.suggestedStartGroup})` : ''}</label>
+          <input type="number" id="gen-tab-startgroup" min="1" placeholder="${d.suggestedStartGroup || 'auto'}">
+          <div class="hint">For unrestricted ("All portion") devotees. Leave blank to use the automatic rotation shown above.</div>
+          <label>Starting group for restricted-portion devotees</label>
+          <input type="number" id="gen-tab-restricted-startgroup" min="1" placeholder="auto">
+          <div class="hint">Separately controls which group starts first among restricted-portion clusters (e.g. Groups 12-15). Leave blank for automatic rotation.</div>
+          <button class="btn small block" id="gen-tab" style="margin-top:10px;">Generate Ekadashi tab</button>
+          <div id="gen-tab-msg"></div>
+        </div>
+      `);
+      b.querySelector('#gen-tab').onclick = async (ev) => {
+        ev.target.disabled = true;
+        const msg = b.querySelector('#gen-tab-msg');
+        const startGroup = b.querySelector('#gen-tab-startgroup').value.trim();
+        const restrictedStartGroup = b.querySelector('#gen-tab-restricted-startgroup').value.trim();
+        try {
+          const r = await api('adminGenerateEkadashiTab', { date: d.readyToGenerateDate, startGroup: startGroup || undefined, restrictedStartGroup: restrictedStartGroup || undefined });
+          msg.innerHTML = '';
+          msg.appendChild(el(`<div class="success-msg">Created "${escapeHtml(r.sheetName)}". Fill Role/Status live as devotees recite.</div>`));
+          loadDashboard(box);
+        } catch (e) {
+          ev.target.disabled = false;
+          msg.innerHTML = '';
+          msg.appendChild(el(`<div class="error-msg">${escapeHtml(e.message)}</div>`));
+        }
+      };
+      box.appendChild(b);
+    }
+
+    if (!d.needConfirmDate && !d.readyToGenerateDate) {
+      box.appendChild(el(`<div class="empty-state">Nothing pending right now — add more dates to the Roll_Numbers calendar (columns V:X) when ready.</div>`));
+    }
+
+    const specificPanel = el(`
+      <div class="panel panel-tight" style="margin-bottom:12px;">
+        <h3>Generate for a specific date</h3>
+        <p>Use this to go out of the normal next-in-line order, or to generate a date not yet in your Roll_Numbers calendar.</p>
+        <label>Date</label>
+        <input type="date" id="specific-date">
+        <label>Starting group (optional, for "Generate Ekadashi tab" only)</label>
+        <input type="number" id="specific-startgroup" min="1" placeholder="auto">
+        <div class="hint">For unrestricted devotees.</div>
+        <label>Starting group for restricted-portion devotees (optional)</label>
+        <input type="number" id="specific-restricted-startgroup" min="1" placeholder="auto">
+        <div style="display:flex;gap:10px;margin-top:12px;">
+          <button class="btn secondary" id="specific-confirm" style="flex:1;">Generate confirmation</button>
+          <button class="btn secondary" id="specific-tab" style="flex:1;">Generate Ekadashi tab</button>
+        </div>
+        <div id="specific-msg"></div>
+      </div>
+    `);
+    specificPanel.querySelector('#specific-confirm').onclick = async (ev) => {
+      const dateVal = specificPanel.querySelector('#specific-date').value;
+      const msg = specificPanel.querySelector('#specific-msg');
+      msg.innerHTML = '';
+      if (!dateVal) { msg.appendChild(el(`<div class="error-msg">Pick a date first.</div>`)); return; }
+      ev.target.disabled = true;
+      try {
+        const r = await api('adminGenerateConfirmation', { date: dateVal });
+        msg.appendChild(el(`<div class="success-msg">Created "${escapeHtml(r.sheetName)}".</div>`));
+        loadDashboard(box);
+      } catch (e) {
+        msg.appendChild(el(`<div class="error-msg">${escapeHtml(e.message)}</div>`));
+      }
+      ev.target.disabled = false;
+    };
+    specificPanel.querySelector('#specific-tab').onclick = async (ev) => {
+      const dateVal = specificPanel.querySelector('#specific-date').value;
+      const startGroup = specificPanel.querySelector('#specific-startgroup').value.trim();
+      const restrictedStartGroup = specificPanel.querySelector('#specific-restricted-startgroup').value.trim();
+      const msg = specificPanel.querySelector('#specific-msg');
+      msg.innerHTML = '';
+      if (!dateVal) { msg.appendChild(el(`<div class="error-msg">Pick a date first.</div>`)); return; }
+      ev.target.disabled = true;
+      try {
+        const r = await api('adminGenerateEkadashiTab', { date: dateVal, startGroup: startGroup || undefined, restrictedStartGroup: restrictedStartGroup || undefined });
+        msg.appendChild(el(`<div class="success-msg">Created "${escapeHtml(r.sheetName)}". A confirmation tab for this date must already exist with attendance marked.</div>`));
+        loadDashboard(box);
+      } catch (e) {
+        msg.appendChild(el(`<div class="error-msg">${escapeHtml(e.message)}</div>`));
+      }
+      ev.target.disabled = false;
+    };
+    box.appendChild(specificPanel);
+
+    const summary = await api('adminConfirmationSummary');
+    if (summary.sheetName) {
+      const s = el(`<div><h3>${escapeHtml(summary.sheetName)} — attendance so far</h3></div>`);
+      const t = el(`<table><thead><tr><th>Group</th><th>Present</th></tr></thead><tbody></tbody></table>`);
+      summary.groups.forEach(g => {
+        t.querySelector('tbody').appendChild(el(`<tr><td><span class="group-dot" style="background:${colorForGroup(g.group)};display:inline-block;margin-right:6px;"></span>Group ${g.group}</td><td>${g.present} / ${g.total}</td></tr>`));
+      });
+      s.appendChild(t);
+      box.appendChild(s);
+    }
+  } catch (e) {
+    box.innerHTML = '';
+    box.appendChild(el(`<div class="error-msg">${escapeHtml(e.message)}</div>`));
+  }
+}
+
+async function loadLogins(box) {
+  try {
+    const loginsData = await api('adminListLogins');
+    const groupsData = await api('adminListGroups');
+    box.innerHTML = '';
+
+    const table = el(`<table><thead><tr><th>Name</th><th>Username</th><th>Role</th><th>Groups</th><th>Status</th><th></th></tr></thead><tbody></tbody></table>`);
+    loginsData.logins.forEach(l => {
+      const tr = el(`
+        <tr>
+          <td>${escapeHtml(l.name)}</td>
+          <td>${escapeHtml(l.username)}</td>
+          <td>${l.role === 'ZoomLeader' ? 'Zoom Leader' : l.role}</td>
+          <td>${escapeHtml(l.groups || '—')}</td>
+          <td>${l.active ? '<span style="color:var(--good);">Active</span>' : '<span style="color:var(--bad);">Disabled</span>'}</td>
+          <td><button class="btn secondary small">${l.active ? 'Disable' : 'Enable'}</button></td>
+        </tr>
+      `);
+      tr.querySelector('button').onclick = async (ev) => {
+        ev.target.disabled = true;
+        try { await api('adminSetLoginActive', { username: l.username, active: !l.active }); loadLogins(box); }
+        catch (e) { ev.target.disabled = false; alert(e.message); }
+      };
+      table.querySelector('tbody').appendChild(tr);
+    });
+    box.appendChild(table);
+
+    const formWrap = el(`
+      <div style="margin-top:16px;">
+        <h3>Add a Leader / Zoom Leader account</h3>
+        <label>Name</label>
+        <input type="text" id="nl-name">
+        <label>Username</label>
+        <input type="text" id="nl-user">
+        <div class="hint">Auto-filled from Name — edit it if this person shares a name with someone else.</div>
+        <label>Temporary password (min 6 characters)</label>
+        <input type="text" id="nl-pass">
+        <label>Role</label>
+        <select id="nl-role">
+          <option value="Leader">Group Leader</option>
+          <option value="ZoomLeader">Zoom Leader</option>
+        </select>
+        <label>Groups this person can act on</label>
+        <div class="checkbox-list" id="nl-groups"></div>
+        <button class="btn block" id="nl-create">Create account</button>
+        <div id="nl-msg"></div>
+      </div>
+    `);
+    let usernameEditedManually = false;
+    const nlUserInput = formWrap.querySelector('#nl-user');
+    nlUserInput.addEventListener('input', () => { usernameEditedManually = true; });
+    formWrap.querySelector('#nl-name').addEventListener('input', (ev) => {
+      if (usernameEditedManually) return;
+      nlUserInput.value = ev.target.value.trim().toLowerCase().replace(/\s+/g, ' ');
+    });
+    const groupsBox = formWrap.querySelector('#nl-groups');
+    groupsData.groups.forEach(g => {
+      groupsBox.appendChild(el(`<label><input type="checkbox" value="${g}"> Group ${g}</label>`));
+    });
+    formWrap.querySelector('#nl-create').onclick = async (ev) => {
+      const name = formWrap.querySelector('#nl-name').value.trim();
+      const username = formWrap.querySelector('#nl-user').value.trim();
+      const password = formWrap.querySelector('#nl-pass').value;
+      const role = formWrap.querySelector('#nl-role').value;
+      const groups = Array.from(groupsBox.querySelectorAll('input:checked')).map(cb => Number(cb.value));
+      const msg = formWrap.querySelector('#nl-msg');
+      msg.innerHTML = '';
+      ev.target.disabled = true;
+      try {
+        await api('adminCreateLogin', { name, username, password, role, groups });
+        msg.appendChild(el(`<div class="success-msg">Account created. Share the username and temporary password with them directly.</div>`));
+        loadLogins(box);
+      } catch (e) {
+        ev.target.disabled = false;
+        msg.appendChild(el(`<div class="error-msg">${escapeHtml(e.message)}</div>`));
+      }
+    };
+    box.appendChild(formWrap);
+  } catch (e) {
+    box.innerHTML = '';
+    box.appendChild(el(`<div class="error-msg">${escapeHtml(e.message)}</div>`));
+  }
+}
+
+/* ====================================================================
+   LEADER / ZOOM LEADER VIEW
+   ==================================================================== */
+function renderLeader(wrap) {
+  wrap.innerHTML = '';
+  const tabs = el(`
+    <div class="panel panel-tight" style="margin-bottom:14px;">
+      <div class="tabs" style="margin-bottom:0;border-bottom:none;">
+        <button class="tab-btn active" data-tab="attend">Mark attendance</button>
+        <button class="tab-btn" data-tab="today">Today's roster</button>
+      </div>
+    </div>
+  `);
+  wrap.appendChild(tabs);
+  const body = el(`<div id="leader-body"></div>`);
+  wrap.appendChild(body);
+
+  tabs.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.onclick = () => {
+      tabs.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      body.innerHTML = 'Loading…';
+      btn.dataset.tab === 'attend' ? loadAttendance(body) : loadTodayRoster(body);
+    };
+  });
+  loadAttendance(body);
+}
+
+async function loadAttendance(box) {
+  try {
+    const data = await api('leaderGetConfirmationRoster');
+    box.innerHTML = '';
+    if (!data.sheetName) { box.appendChild(el(`<div class="panel empty-state">No confirmation tab is open right now. Check back once the admin generates one.</div>`)); return; }
+
+    const locked = !!data.locked;
+    const panel = el(`
+      <div class="panel">
+        <h2>${data.date ? 'Ekadashi — ' + data.date : data.sheetName}</h2>
+        ${locked
+          ? `<p style="color:var(--maroon);">The Ekadashi tab for this date has already been generated, so attendance is locked — changes here would no longer match what was actually allotted. Contact the admin if a correction is needed.</p>`
+          : `<p>Toggle off anyone who will NOT be present. Everyone defaults to present.</p>`}
+        <div id="attend-rows"></div>
+        ${locked ? '' : `<button class="btn block" id="attend-save">Save attendance</button>`}
+        <div id="attend-msg"></div>
+      </div>
+    `);
+    const rowsBox = panel.querySelector('#attend-rows');
+    const state = {};
+    data.rows.forEach(r => {
+      state[r.rollNumber] = r.present;
+      const row = el(`
+        <div class="roster-row">
+          <span class="group-dot" style="background:${colorForGroup(r.group)};"></span>
+          <div class="name">${escapeHtml(r.name)} <span class="rn">#${escapeHtml(r.rollNumber)}</span></div>
+          <button class="toggle ${r.present ? 'on' : ''}" ${locked ? 'disabled style="opacity:0.5;cursor:default;"' : ''}><span class="knob"></span></button>
+        </div>
+      `);
+      if (!locked) {
+        row.querySelector('.toggle').onclick = (ev) => {
+          state[r.rollNumber] = !state[r.rollNumber];
+          ev.currentTarget.classList.toggle('on', state[r.rollNumber]);
+        };
+      }
+      rowsBox.appendChild(row);
+    });
+
+    if (!locked) {
+      panel.querySelector('#attend-save').onclick = async (ev) => {
+        ev.target.disabled = true;
+        const msg = panel.querySelector('#attend-msg');
+        msg.innerHTML = '';
+        try {
+          const rows = Object.keys(state).map(rn => ({ rollNumber: rn, present: state[rn] }));
+          const r = await api('leaderSubmitAttendance', { rows });
+          msg.appendChild(el(`<div class="success-msg">Saved — ${r.updated} update(s).</div>`));
+        } catch (e) {
+          msg.appendChild(el(`<div class="error-msg">${escapeHtml(e.message)}</div>`));
+        }
+        ev.target.disabled = false;
+      };
+    }
+    box.appendChild(panel);
+  } catch (e) {
+    box.innerHTML = '';
+    box.appendChild(el(`<div class="error-msg">${escapeHtml(e.message)}</div>`));
+  }
+}
+
+async function loadTodayRoster(box) {
+  try {
+    const data = await api('leaderGetTodayRoster');
+    box.innerHTML = '';
+    if (!data.sheetName) { box.appendChild(el(`<div class="panel empty-state">No Ekadashi tab has been generated yet.</div>`)); return; }
+
+    const panel = el(`<div class="panel"><h2>${data.date ? 'Ekadashi — ' + data.date : data.sheetName}</h2><p>Update status, substitute (Recited By), and remarks as devotees recite.</p><div id="today-cards"></div></div>`);
+    const cardsBox = panel.querySelector('#today-cards');
+
+    if (data.rows.length === 0) cardsBox.appendChild(el(`<div class="empty-state">No rows for your group on this tab.</div>`));
+
+    data.rows.forEach(r => {
+      const card = el(`
+        <div class="today-card">
+          <div class="row1">
+            <div>${escapeHtml(r.name)} <span class="rn" style="color:var(--ink-soft);font-size:0.82rem;">#${escapeHtml(r.rollNumber)}</span></div>
+            <div class="dashakam">${escapeHtml(r.dashakam || '—')}</div>
+          </div>
+          <div class="hint">Shlokas ${escapeHtml(r.shlokaFrom)}–${escapeHtml(r.shlokaTo)}</div>
+          <div class="fields">
+            <div>
+              <label style="margin-top:0;">Role</label>
+              <select class="f-role">${data.roleOptions.map(o => `<option value="${escapeHtml(o)}" ${o === r.role ? 'selected' : ''}>${o || '(none)'}</option>`).join('')}</select>
+            </div>
+            <div>
+              <label style="margin-top:0;">Status</label>
+              <select class="f-status">${data.statusOptions.map(o => `<option value="${escapeHtml(o)}" ${o === r.status ? 'selected' : ''}>${o || '(none)'}</option>`).join('')}</select>
+            </div>
+            <div class="full">
+              <label style="margin-top:0;">Recited by (if not assignee / substitute)</label>
+              <input type="text" class="f-recitedby" value="${escapeHtml(r.recitedBy || '')}" placeholder="Roll number of substitute">
+            </div>
+            <div class="full">
+              <label style="margin-top:0;">Remarks</label>
+              <input type="text" class="f-remarks" value="${escapeHtml(r.remarks || '')}">
+            </div>
+            <div class="full">
+              <button class="btn small f-save">Save</button>
+              <span class="f-msg"></span>
+            </div>
+          </div>
+        </div>
+      `);
+      card.querySelector('.f-save').onclick = async (ev) => {
+        ev.target.disabled = true;
+        const msg = card.querySelector('.f-msg');
+        msg.textContent = '';
+        try {
+          await api('leaderUpdateTodayRow', {
+            rowIndex: r.rowIndex,
+            role: card.querySelector('.f-role').value,
+            status: card.querySelector('.f-status').value,
+            recitedBy: card.querySelector('.f-recitedby').value.trim(),
+            remarks: card.querySelector('.f-remarks').value.trim()
+          });
+          msg.textContent = 'Saved ✓';
+          msg.style.color = 'var(--good)';
+        } catch (e) {
+          msg.textContent = e.message;
+          msg.style.color = 'var(--bad)';
+        }
+        ev.target.disabled = false;
+      };
+      cardsBox.appendChild(card);
+    });
+    box.appendChild(panel);
+  } catch (e) {
+    box.innerHTML = '';
+    box.appendChild(el(`<div class="error-msg">${escapeHtml(e.message)}</div>`));
+  }
+}
+
+/* ====================================================================
+   BOOT
+   ==================================================================== */
+render();
+</script>
+</body>
+</html>
