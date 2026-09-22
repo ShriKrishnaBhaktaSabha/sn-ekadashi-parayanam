@@ -365,7 +365,7 @@ function colorForGroup(groupNum) {
   const idx = Math.max(0, Math.floor(Number(groupNum)) - 1);
   const hue = (idx % HUE_STEPS) * (360 / HUE_STEPS);
   const ring = Math.floor(idx / HUE_STEPS) % 2;
-  const s = ring === 0 ? 62 : 78, l = ring === 0 ? 55 : 45;
+  const s = ring === 0 ? 55 : 62, l = ring === 0 ? 68 : 60;
   return `hsl(${hue},${s}%,${l}%)`;
 }
 
@@ -584,7 +584,7 @@ function renderDevoteeCard(data) {
       <p style="margin-top:4px;">Roll number ${escapeHtml(p.rollNumber)}${p.portion ? ' · Portion: ' + escapeHtml(p.portion) : ''}</p>
       <hr class="divider">
       <h3>Upcoming</h3>
-      ${data.upcoming ? `<p style="color:var(--ink);">${escapeHtml(data.upcoming.date)} — <strong>${escapeHtml(data.upcoming.dashakam)}</strong></p>` : `<p>No upcoming portion allotted yet.</p>`}
+      ${data.upcoming ? `<p style="color:var(--ink);">${escapeHtml(data.upcoming.date)} — <strong>${escapeHtml(data.upcoming.dashakam)}</strong>${data.upcoming.tentativeTime ? ` · tentatively around <strong>${escapeHtml(data.upcoming.tentativeTime)}</strong>` : ''}</p>` : `<p>No upcoming portion allotted yet.</p>`}
       <hr class="divider">
       <h3>Recitation history</h3>
       ${data.recited && data.recited.length ? `<table><thead><tr><th>Date</th><th>Recited</th></tr></thead><tbody>${
@@ -647,6 +647,32 @@ async function loadDashboard(box) {
       </div>
     `));
 
+    const paceData = await api('adminGetPace');
+    const pacePanel = el(`
+      <div class="panel panel-tight" style="margin-bottom:12px;">
+        <h3>Recitation pace</h3>
+        <p>Used to estimate each devotee's "Tentative Time" when you set a start time while generating a tab — so they know roughly when to log in for their turn.</p>
+        <label>Seconds per shloka</label>
+        <input type="number" id="pace-input" min="1" value="${paceData.paceSeconds}">
+        <button class="btn small" id="pace-save" style="margin-top:10px;">Save pace</button>
+        <div id="pace-msg"></div>
+      </div>
+    `);
+    pacePanel.querySelector('#pace-save').onclick = async (ev) => {
+      ev.target.disabled = true;
+      const msg = pacePanel.querySelector('#pace-msg');
+      msg.innerHTML = '';
+      try {
+        const val = pacePanel.querySelector('#pace-input').value.trim();
+        await api('adminSetPace', { paceSeconds: val });
+        msg.appendChild(el(`<div class="success-msg">Saved.</div>`));
+      } catch (e) {
+        msg.appendChild(el(`<div class="error-msg">${escapeHtml(e.message)}</div>`));
+      }
+      ev.target.disabled = false;
+    };
+    box.appendChild(pacePanel);
+
     if (d.needConfirmDate) {
       const b = el(`
         <div class="panel panel-tight" style="margin-bottom:12px;">
@@ -686,6 +712,9 @@ async function loadDashboard(box) {
           <label>Starting group for restricted-portion devotees</label>
           <input type="number" id="gen-tab-restricted-startgroup" min="1" placeholder="auto">
           <div class="hint">Separately controls which group starts first among restricted-portion clusters (e.g. Groups 12-15). Leave blank for automatic rotation.</div>
+          <label>Start time (optional)</label>
+          <input type="time" id="gen-tab-starttime">
+          <div class="hint">If set, fills a "Tentative Time" column so devotees know roughly when to log in for their turn — based on your saved recitation pace below.</div>
           <button class="btn small block" id="gen-tab" style="margin-top:10px;">Generate Ekadashi tab</button>
           <div id="gen-tab-msg"></div>
         </div>
@@ -695,8 +724,9 @@ async function loadDashboard(box) {
         const msg = b.querySelector('#gen-tab-msg');
         const startGroup = b.querySelector('#gen-tab-startgroup').value.trim();
         const restrictedStartGroup = b.querySelector('#gen-tab-restricted-startgroup').value.trim();
+        const startTime = b.querySelector('#gen-tab-starttime').value.trim();
         try {
-          const r = await api('adminGenerateEkadashiTab', { date: d.readyToGenerateDate, startGroup: startGroup || undefined, restrictedStartGroup: restrictedStartGroup || undefined });
+          const r = await api('adminGenerateEkadashiTab', { date: d.readyToGenerateDate, startGroup: startGroup || undefined, restrictedStartGroup: restrictedStartGroup || undefined, startTime: startTime || undefined });
           msg.innerHTML = '';
           msg.appendChild(el(`<div class="success-msg">Created "${escapeHtml(r.sheetName)}". Fill Role/Status live as devotees recite.</div>`));
           loadDashboard(box);
@@ -724,6 +754,8 @@ async function loadDashboard(box) {
         <div class="hint">For unrestricted devotees.</div>
         <label>Starting group for restricted-portion devotees (optional)</label>
         <input type="number" id="specific-restricted-startgroup" min="1" placeholder="auto">
+        <label>Start time (optional, for "Generate Ekadashi tab" only)</label>
+        <input type="time" id="specific-starttime">
         <div style="display:flex;gap:10px;margin-top:12px;">
           <button class="btn secondary" id="specific-confirm" style="flex:1;">Generate confirmation</button>
           <button class="btn secondary" id="specific-tab" style="flex:1;">Generate Ekadashi tab</button>
@@ -750,12 +782,13 @@ async function loadDashboard(box) {
       const dateVal = specificPanel.querySelector('#specific-date').value;
       const startGroup = specificPanel.querySelector('#specific-startgroup').value.trim();
       const restrictedStartGroup = specificPanel.querySelector('#specific-restricted-startgroup').value.trim();
+      const startTime = specificPanel.querySelector('#specific-starttime').value.trim();
       const msg = specificPanel.querySelector('#specific-msg');
       msg.innerHTML = '';
       if (!dateVal) { msg.appendChild(el(`<div class="error-msg">Pick a date first.</div>`)); return; }
       ev.target.disabled = true;
       try {
-        const r = await api('adminGenerateEkadashiTab', { date: dateVal, startGroup: startGroup || undefined, restrictedStartGroup: restrictedStartGroup || undefined });
+        const r = await api('adminGenerateEkadashiTab', { date: dateVal, startGroup: startGroup || undefined, restrictedStartGroup: restrictedStartGroup || undefined, startTime: startTime || undefined });
         msg.appendChild(el(`<div class="success-msg">Created "${escapeHtml(r.sheetName)}". A confirmation tab for this date must already exist with attendance marked.</div>`));
         loadDashboard(box);
       } catch (e) {
@@ -971,7 +1004,7 @@ async function loadTodayRoster(box) {
             <div>${escapeHtml(r.name)} <span class="rn" style="color:var(--ink-soft);font-size:0.82rem;">#${escapeHtml(r.rollNumber)}</span></div>
             <div class="dashakam">${escapeHtml(r.dashakam || '—')}</div>
           </div>
-          <div class="hint">Shlokas ${escapeHtml(r.shlokaFrom)}–${escapeHtml(r.shlokaTo)}</div>
+          <div class="hint">Shlokas ${escapeHtml(r.shlokaFrom)}–${escapeHtml(r.shlokaTo)}${r.tentativeTime ? ` · tentatively ${escapeHtml(r.tentativeTime)}` : ''}</div>
           <div class="fields">
             <div>
               <label style="margin-top:0;">Role</label>
